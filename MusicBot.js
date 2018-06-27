@@ -61,10 +61,10 @@ client.on('message', async msg => { // eslint-disable-line
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
 					var embed = new Discord.RichEmbed()
-                                .setTitle("🎺 Song Selection 🎻 \`\` ")
+                                .setTitle("Pilih music \`\` ")
                                 .setDescription(`${videos.map(video2 => `**${++index}** \`${video2.title}\` `).join('\n')}`)
 	                        .setColor("RANDOM")
-                                .setFooter("Please provide a value to select one of the search results ranging from 1-10.")
+                                .setFooter("Pilih 1 - 10.")
 
                                  msg.channel.send(embed)
 					// eslint-disable-next-line max-depth
@@ -114,10 +114,10 @@ client.on('message', async msg => { // eslint-disable-line
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
 					var embed = new Discord.RichEmbed()
-                                .setTitle("🎺 Song Selection 🎻")
+                                .setTitle("Pilih music \`\` ")
                                 .setDescription(`${videos.map(video2 => `**${++index}** \`${video2.title}\` `).join('\n')}`)
 	                        .setColor("RANDOM")
-                                .setFooter("Please provide a value to select one of the search results ranging from 1-10.")
+                                .setFooter("Pilih 1 - 10.")
 
                                  msg.channel.send(embed)
 					// eslint-disable-next-line max-depth
@@ -164,7 +164,7 @@ client.on('message', async msg => { // eslint-disable-line
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');		       
 		                var embed = new Discord.RichEmbed()
                                 .setTitle("Song Selection")
-                                .setDescription(`🎧 Now playing: ${serverQueue.songs[0].title}`)
+                                .setDescription(`🎧 Sedang memutar: ${serverQueue.songs[0].title}`)
 	                        .setColor("RANDOM")
                                  msg.channel.send(embed)
 		
@@ -173,7 +173,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        var embed = new Discord.RichEmbed()
                                 .setTitle("Queue")
                                 .setDescription(`${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}`)
-		                .setFooter(`**Now playing:** ${serverQueue.songs[0].title}`)
+                                .setDescription(`🎧 Sedang memutar: ${serverQueue.songs[0].title}`)
 	                        .setColor("RANDOM")
                                  msg.channel.send(embed)
 		
@@ -265,7 +265,7 @@ function play(guild, song) {
 
 				 var embed = new Discord.RichEmbed()
                                 .setTitle("Song Selection")
-                                .setDescription(`🎵 \`Start playing:\` **${song.title}**`)
+                                .setDescription(`🎵 \`sedang memutar:\` **${song.title}**`)
 	                        .setColor("RANDOM")
                                 serverQueue.textChannel.send(embed)
 }
